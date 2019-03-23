@@ -1,4 +1,4 @@
-package edu.example.criminalintent;
+package edu.example.criminalintent.models;
 
 import android.content.Context;
 

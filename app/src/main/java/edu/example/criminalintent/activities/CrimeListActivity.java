@@ -1,8 +1,8 @@
-package edu.example.criminalintent;
+package edu.example.criminalintent.activities;
 
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
+import edu.example.criminalintent.fragments.CrimeListFragment;
 
 public class CrimeListActivity extends SingleFragmentActivity {
 

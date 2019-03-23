@@ -1,9 +1,11 @@
-package edu.example.criminalintent;
+package edu.example.criminalintent.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+
+import edu.example.criminalintent.R;
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
