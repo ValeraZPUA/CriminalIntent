@@ -20,6 +20,17 @@ public class CrimeLab {
             crime.setSolved(i % 2 == 0); // Для каждого второго объекта
             mCrimes.add(crime);
         }
+        mCrimes.get(0).setmRequiresPolice(1);
+        mCrimes.get(10).setmRequiresPolice(1);
+        mCrimes.get(20).setmRequiresPolice(1);
+        mCrimes.get(30).setmRequiresPolice(1);
+        mCrimes.get(40).setmRequiresPolice(1);
+        mCrimes.get(50).setmRequiresPolice(1);
+        mCrimes.get(60).setmRequiresPolice(1);
+        mCrimes.get(70).setmRequiresPolice(1);
+        mCrimes.get(70).setmRequiresPolice(1);
+        mCrimes.get(80).setmRequiresPolice(1);
+        mCrimes.get(90).setmRequiresPolice(1);
     }
 
     public static CrimeLab get(Context context) {
