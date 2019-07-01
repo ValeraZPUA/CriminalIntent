@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +52,7 @@ public class CrimeListFragment extends Fragment {
     private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mTitleTextView, mDateTextView;
+        private ImageView mSolvedImageView;
         private Button btnPolice;
         private Crime mCrime;
 
@@ -61,8 +63,10 @@ public class CrimeListFragment extends Fragment {
 
             mTitleTextView = itemView.findViewById(R.id.crime_title);
             mDateTextView = itemView.findViewById(R.id.crime_date);
+            mSolvedImageView = itemView.findViewById(R.id.crime_solved);
 
             if(viewType == POLICE) {
+
                 btnPolice = itemView.findViewById(R.id.btn_police);
                 btnPolice.setOnClickListener(this);
             }
@@ -73,6 +77,7 @@ public class CrimeListFragment extends Fragment {
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
             mDateTextView.setText(mCrime.getDate().toString());
+            mSolvedImageView.setVisibility(crime.isSolved() ? View.VISIBLE : View.GONE);
         }
 
         @Override
@@ -82,10 +87,10 @@ public class CrimeListFragment extends Fragment {
                     Toast.makeText(getActivity(),mCrime.getTitle() + " FUCK THE POLICE!", Toast.LENGTH_SHORT).show();
                     break;
                 case -1:
-                    Toast.makeText(getActivity(),mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
                     break;
             }
 
+            Toast.makeText(getActivity(),mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
         }
     }
 
