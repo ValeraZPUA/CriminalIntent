@@ -1,5 +1,7 @@
 package edu.example.criminalintent.models;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -7,13 +9,15 @@ public class Crime {
 
     private UUID id;
     private String title;
-    private Date date;
+    private String date;
+    private SimpleDateFormat simpleDateFormat;
     private boolean solved;
     private int mRequiresPolice;
 
     public Crime() {
         id = UUID.randomUUID();
-        date = new Date();
+        simpleDateFormat = new SimpleDateFormat("EEEE, MMM ww, yyyy");
+        date = simpleDateFormat.format(new Date());
     }
 
     public UUID getId() {
@@ -28,11 +32,11 @@ public class Crime {
         this.title = title;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
